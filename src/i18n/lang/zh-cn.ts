@@ -2,6 +2,7 @@
 export default {
 	router: {
 		home: '首页',
+		profile: '个人主页',
 		system: '系统设置',
 		systemMenu: '菜单管理',
 		systemRole: '角色管理',
