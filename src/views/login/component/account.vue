@@ -27,7 +27,7 @@
 				</template>
 			</el-input>
 		</el-form-item>
-		<el-form-item class="login-animation3">
+		<!-- <el-form-item class="login-animation3">
 			<el-col :span="15">
 				<el-input
 					text
@@ -46,11 +46,14 @@
 			<el-col :span="8">
 				<el-button class="login-content-code" v-waves>1234</el-button>
 			</el-col>
-		</el-form-item>
+		</el-form-item> -->
 		<el-form-item class="login-animation4">
 			<el-button type="primary" class="login-content-submit" round v-waves @click="onSignIn" :loading="state.loading.signIn">
 				<span>{{ $t('message.account.accountBtnText') }}</span>
 			</el-button>
+			<!-- <el-button type="primary" class="login-content-submit" round v-waves @click="onRegister" :loading="state.loading.signIn">
+				<span>{{ $t('message.account.accountRegisterText') }}</span>
+			</el-button> -->
 		</el-form-item>
 	</el-form>
 </template>
@@ -91,6 +94,12 @@ const state = reactive({
 const currentTime = computed(() => {
 	return formatAxis(new Date());
 });
+// 注册
+
+const onRegister = () => {
+
+}
+
 // 登录
 const onSignIn = async () => {
 	state.loading.signIn = true;

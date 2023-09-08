@@ -187,11 +187,13 @@
 import { reactive, computed } from 'vue';
 import { formatAxis } from '/@/utils/formatTime';
 import { newsInfoList, recommendList } from './mock';
+import { onMounted } from 'vue';
 
 // 定义变量内容
 const state = reactive<PersonalState>({
 	newsInfoList,
 	recommendList,
+	userInfo: {},
 	personalForm: {
 		name: '',
 		email: '',
@@ -201,6 +203,8 @@ const state = reactive<PersonalState>({
 		sex: '',
 	},
 });
+
+
 
 // 当前时间提示语
 const currentTime = computed(() => {

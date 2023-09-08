@@ -3,6 +3,7 @@ export default {
 	label: {
 		one1: '用户名登录',
 		two2: '手机号登录',
+		reg: '注册',
 	},
 	link: {
 		one3: '第三方登录',
@@ -13,6 +14,7 @@ export default {
 		accountPlaceholder2: '密码：123456',
 		accountPlaceholder3: '请输入验证码',
 		accountBtnText: '登 录',
+		accountRegisterText: '注 册',
 	},
 	mobile: {
 		placeholder1: '请输入手机号',

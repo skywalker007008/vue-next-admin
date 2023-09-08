@@ -1,9 +1,22 @@
 <template>
 	<div class="personal layout-pd">
 		<el-row>
+				<el-col :xs="12" :sm = "4">
+					<div class = "personal-user">
+						<div class="personal-user-left">
+							<img :src = "state.userInfo.icon.link">
+						</div>
+					</div>
+				</el-col>
+				<el-col :xs="12" :sm = "4">
+					<div class="personal-item-value mb10">{{state.userInfo.username}}</div>
+					<div class="personal-item-value mb10">{{state.userInfo.rank }}</div>
+				</el-col>
+
+
 			<!-- 个人信息 -->
 			<el-col :xs="24" :sm="16">
-				<el-card shadow="hover" header="个人信息">
+				<el-card  header="个人信息">
 					<div class="personal-user">
 						<div class="personal-user-left">
 							<el-upload class="h100 personal-user-left-upload" action="https://jsonplaceholder.typicode.com/posts/" multiple :limit="1">
@@ -186,12 +199,15 @@
 <script setup lang="ts" name="personal">
 import { reactive, computed } from 'vue';
 import { formatAxis } from '/@/utils/formatTime';
-import { newsInfoList, recommendList } from './mock';
+import { newsInfoList, recommendList, userInfo } from './mock';
+import { onMounted } from 'vue';
+import axios from 'axios'
 
 // 定义变量内容
 const state = reactive<PersonalState>({
 	newsInfoList,
 	recommendList,
+	userInfo,
 	personalForm: {
 		name: '',
 		email: '',
@@ -202,10 +218,37 @@ const state = reactive<PersonalState>({
 	},
 });
 
+const url = "localhost:9090/player/";
+const id = 1;
+
+onMounted(() => {
+	console.log(state);
+	// state.userInfo.icon.link = "/@/icon.png"
+	getPlayerInfo();
+})
+
 // 当前时间提示语
 const currentTime = computed(() => {
 	return formatAxis(new Date());
 });
+
+// Request Player Info
+
+const getPlayerInfo = () => {
+	// fetch(url + id).then(res => res.json()).then(res => {
+	// 	console.log(res);
+	// })
+	// 可以使用axios提供的post和get等
+	axios.get(url)	// 可换成post或者delete来实现其他操作
+  		.then((response) => {
+    	console.log('GET Request Successful:', response.data);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+
+}
+
 </script>
 
 <style scoped lang="scss">

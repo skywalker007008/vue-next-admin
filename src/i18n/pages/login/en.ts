@@ -3,6 +3,7 @@ export default {
 	label: {
 		one1: 'User name login',
 		two2: 'Mobile number',
+		reg: 'Register',
 	},
 	link: {
 		one3: 'Third party login',
@@ -13,6 +14,7 @@ export default {
 		accountPlaceholder2: 'Password: 123456',
 		accountPlaceholder3: 'Please enter the verification code',
 		accountBtnText: 'Sign in',
+		accountRegisterText: 'Register',
 	},
 	mobile: {
 		placeholder1: 'Please input mobile phone number',

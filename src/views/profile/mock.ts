@@ -64,3 +64,42 @@ export const recommendList = [
 		iconColor: '#FDC566',
 	},
 ];
+
+/**
+ * 营销推荐
+ * @returns 返回模拟数据
+ */
+export const userInfo = 
+   {
+	   username: 'skywalker007',	//用户名
+	   rank: '5d',	//段位信息
+	   groups: [	//所属组织
+		{
+			id: 1,
+			name: "北京大学生围棋协会"
+		},
+		{
+			id: 45,
+			name: "北航围棋队"
+		}
+	   ],
+	   accounts: [	//其他平台账号
+		{
+			platform: "yikeweiqi",
+			username: "CGF36443",
+			link: "null",
+			rank: "6d"
+		},
+		{
+			platform: "OGS",
+			username: "skywalker007",
+			link: "https://online-go.com/user/view/862986",
+			rank: "5d"
+		}
+	   ],
+		icon: {	//头像
+			link: "icon.png"
+		}
+	   
+   }
+;
